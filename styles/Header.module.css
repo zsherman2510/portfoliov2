@@ -2,21 +2,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #fff;
-  color: #333;
-  height: 60px;
-  padding: 0 30px;
+  background: #00152e;
+  color: rgb(255, 255, 255);
+  height: 80px;
+  padding: 0 150px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .header a {
-  color: #333;
+  color: #fff;
   margin-right: 20px;
 }
 
 .header a:hover {
-  color: #000;
+  color: #D5F3FE;
 }
+
 .header ul {
   display: flex;
   align-items: center;
@@ -25,13 +26,13 @@
 }
 
 .logo {
-  color: red;
+  color: #3C99DC;
   font-size: 20px;
-  text-transform: uppercase;
+
 }
 
 .logo a {
-  color: red;
+  color: #3C99DC;
 }
 
 @media (max-width: 768px) {

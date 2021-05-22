@@ -1,6 +1,9 @@
 .footer {
-  margin: 100px 0 40px;
+  margin-top: 10rem;
+  background: #00152e;
+  padding: 1.2rem;
   text-align: center;
+
 }
 
 .footer p {
