@@ -1,5 +1,6 @@
 .container {
     padding: 0px 150px;
+    /* padding: 0px 40px; */
 
 }
 
@@ -26,14 +27,14 @@
 }
 
 .hero_intro {
-    font-size: 3em;
+    font-size: 1.5rem;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: .5px;
 }
 
 .hero_subline {
-    font-size: 1.4em;
+    font-size: 1.4rem;
     margin-top: 25px;
-    letter-spacing: 1px;
+    letter-spacing: .5px;
     line-height: 150%;
 }

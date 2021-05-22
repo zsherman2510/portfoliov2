@@ -1,10 +1,13 @@
 import styles from "@/styles/Projects.module.css";
-export default function Projects({ children }) {
+import ProjectItem from "@/components/ProjectItem";
+
+export default function Projects({ projects }) {
   return (
     <>
       <div className={styles.wrapper}>
-        <h1>Projects</h1>
-        <div className={styles.container}>{children}</div>
+        {projects.map((project) => (
+          <ProjectItem project={project} key={project.id} />
+        ))}
       </div>
     </>
   );
