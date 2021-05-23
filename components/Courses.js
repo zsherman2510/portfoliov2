@@ -6,7 +6,7 @@ export default function Courses({ courses }) {
       <h1>Courses</h1>
       <div className={styles.wrapper}>
         {courses.map((course) => (
-          <CourseItem course={course} />
+          <CourseItem key={course.id} course={course} />
         ))}
       </div>
     </div>

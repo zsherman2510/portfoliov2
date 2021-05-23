@@ -33,7 +33,9 @@ export default function ProjectItem({ project }) {
         <div className={styles.project_desc}>
           <div className={styles.project_tag}>
             {techSplits.map((tech) => (
-              <div className={styles.project_tech}>{tech}</div>
+              <div key={tech} className={styles.project_tech}>
+                {tech}
+              </div>
             ))}
           </div>
           <div className={styles.project_title}>{project.name}</div>

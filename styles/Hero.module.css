@@ -15,8 +15,8 @@
 
 }
 
-.hero{
-    height: 40vh;
+.hero {
+    height: 100%;
 }
 
 .hero_text_container {
@@ -32,9 +32,25 @@
     letter-spacing: .5px;
 }
 
+@media only screen and (min-width: 768px) {
+    .hero_intro {
+        font-size: 2.1rem;
+    }
+}
+
 .hero_subline {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     margin-top: 25px;
     letter-spacing: .5px;
     line-height: 150%;
+}
+
+.button {
+    display: block;
+    margin-top: 1.7rem;
+    padding: .5rem .7rem;
+    background-color: #0359b4;
+    border-radius: 5px;
+    width: 10rem;
+    text-align: center;
 }

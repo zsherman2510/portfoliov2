@@ -1,5 +1,8 @@
 import styles from "@/styles/CourseItem.module.css";
+import projectStyles from "@/styles/ProjectItem.module.css";
+
 export default function CourseItem({ course }) {
+  const techSplits = course.technology.split("/");
   return (
     <div>
       <div className={styles.course}>
@@ -17,7 +20,17 @@ export default function CourseItem({ course }) {
             </span>
           </div>
         </div>
-        <div className={styles.description}></div>
+        <div className={styles.description}>
+          <div className={styles.tech_wrapper}>
+            {techSplits.map((tech) => (
+              <span key={tech} className={projectStyles.project_tech}>
+                {tech}
+              </span>
+            ))}
+          </div>
+          <div className={styles.desc}>{course.description}</div>
+          <button className={styles.button}>Enroll</button>
+        </div>
       </div>
     </div>
   );

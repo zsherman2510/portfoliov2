@@ -19,17 +19,12 @@ export default function Header() {
           </li>
           <li>
             <Link href="/events">
+              <a>Projects</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/events">
               <a>Courses</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/events">
-              <a>Portfolio</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/events">
-              <a>Experience</a>
             </Link>
           </li>
           <li>
