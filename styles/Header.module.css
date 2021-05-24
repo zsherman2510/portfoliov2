@@ -18,6 +18,13 @@
   color: #D5F3FE;
 }
 
+
+.loggedIn {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: lawngreen;
+}
 .header ul {
   display: flex;
   align-items: center;
@@ -33,6 +40,15 @@
 
 .logo a {
   color: #3C99DC;
+}
+
+.button{
+  background: #3C99DC;
+  text-align: center;
+  padding: .5rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {

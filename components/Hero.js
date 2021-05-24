@@ -12,11 +12,7 @@ export default function Hero() {
             I specialize in front-end engineering, SEO, and helping individuals
             and businesses grow.
           </div>
-          <a
-            href="./public/Resume.pdf"
-            target="_blank"
-            className={styles.button}
-          >
+          <a href="./Resume.pdf" target="_blank" className={styles.button}>
             View Resume
           </a>
         </div>

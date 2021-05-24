@@ -1,10 +1,13 @@
 import Image from "next/image";
 import styles from "@/styles/ProjectItem.module.css";
+import { useContext } from "react";
 import Link from "next/link";
+import AuthProvider from "@/context/AuthProvider";
+import { NEXT_URL } from "@/config/index";
 export default function ProjectItem({ project }) {
   console.log(project);
   console.log("here");
-
+  const { user, error } = useContext(AuthProvider);
   const techSplits = project.tech.split("/");
 
   return (
@@ -42,13 +45,25 @@ export default function ProjectItem({ project }) {
 
           <div className={styles.project_info}>{project.description}</div>
 
-          <button
+          <a
             href={project.link}
             className={styles.project_link}
             target="_blank"
           >
             View live demo
-          </button>
+          </a>
+          {user ? (
+            <>
+              <a
+                className={styles.project_link}
+                href={`${NEXT_URL}/projects/edit/${project.id}`}
+              >
+                Edit Project
+              </a>
+            </>
+          ) : (
+            <span></span>
+          )}
         </div>
       </div>
     </>
