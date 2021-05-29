@@ -1,7 +1,7 @@
 .wrapper {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     margin: 4rem auto;
-    justify-content: space-between;
+    
     
 }

@@ -1,10 +1,11 @@
 .project {
     position: relative;
-    background: #0359b4;
-    margin-top: 4rem;
+    background: rgb(3, 89, 181);
+    margin: 2rem 1rem 2rem 0;
     padding: 1.1rem;
     border: 1px solid #031930;
-    width: 18rem;
+    width: 100%;
+    max-width: 380px;
     border-radius: 12px;
     display: flex;
     flex-direction: column;

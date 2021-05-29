@@ -20,21 +20,26 @@ export default function CourseItem({ course }) {
               }
             ></span>
             <span className={styles.status}>
-              {course.completed ? "Completed" : "In-development"}
+              {course.completed ? "Completed" : "Filming now"}
             </span>
           </div>
         </div>
         <div className={styles.description}>
           <div className={styles.tech_wrapper}>
             {techSplits.map((tech) => (
-              <span key={tech} className={projectStyles.project_tech}>
+              <span key={tech} className={styles.course_tech}>
                 {tech}
               </span>
             ))}
           </div>
           <div className={styles.desc}>{course.description}</div>
           <div className={styles.wrapper}>
-            <a className={styles.button}>Enroll</a>
+            {course.completed ? (
+              <a className={styles.button}>Enroll</a>
+            ) : (
+              <span>Unavaliable at this time </span>
+            )}
+
             {user ? (
               <a
                 className={styles.button}

@@ -1,6 +1,9 @@
 
 .wrapper{
     margin: 3rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    
 
 }
 .container{
