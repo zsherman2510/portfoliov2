@@ -1,12 +1,15 @@
 
-.wrapper{
+
+.wrapper {
+    position: relative;
     margin: 3rem auto;
     display: flex;
     flex-wrap: wrap;
-    
+
 
 }
-.container{
+
+.container {
     margin-top: 100px;
     display: flex;
     justify-content: space-between;

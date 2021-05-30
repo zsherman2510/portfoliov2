@@ -16,6 +16,9 @@ export default function Hero() {
             View Resume
           </a>
         </div>
+        <div className={styles.image_wrapper}>
+          <div className={styles.hero_image}></div>
+        </div>
       </div>
     </>
   );

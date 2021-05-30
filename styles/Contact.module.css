@@ -1,4 +1,35 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.contact_text {
+    width: 80%;
+}
+
 .button {
     text-decoration: underline;
     color: #0359b4;
+}
+
+@media only screen and (min-width: 768px) {
+    .contact_text {
+        width: 40%;
+    }
+
+    .background_container {
+        width: 50%;
+    }
+
+    .image {
+        background-image: url('../public/images/75.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        max-width: 600px;
+        height: 350px;
+    }
 }
