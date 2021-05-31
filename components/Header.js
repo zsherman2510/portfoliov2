@@ -32,7 +32,7 @@ export default function Header() {
           isOpen ? styles.show_menu : styles.close_menu
         }`}
       >
-        <div className={styles.menu_link}>
+        {/* <div className={styles.menu_link}>
           <Link href="/about">
             <a>About</a>
           </Link>
@@ -46,11 +46,11 @@ export default function Header() {
           <Link href="/courses">
             <a>Courses</a>
           </Link>
-        </div>
+        </div> */}
         <div className={styles.menu_link}>
-          <Link href="/contact">
-            <a>Contact</a>
-          </Link>
+          <a target="_blank" href="mailto: shermanzavion@gmail.com">
+            Contact
+          </a>
         </div>
         {user ? (
           <>

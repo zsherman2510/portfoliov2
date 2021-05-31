@@ -3,9 +3,9 @@ import styles from "@/styles/Contact.module.css";
 export default function Contact() {
   return (
     <>
-      <h1>Contact me</h1>
       <div className={styles.container}>
         <div className={styles.contact_text}>
+          <h1>Contact me</h1>
           If you have any questions or would like to meet for coffee to discuss
           future business adventures, then please email me{" "}
           <a

@@ -1,7 +1,8 @@
 .wrapper {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     margin: 4rem auto;
+    flex-flow: wrap;
     
     
 }

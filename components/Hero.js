@@ -9,8 +9,8 @@ export default function Hero() {
             I'm Zavion, software engineer and entrepreneurial educator.
           </div>
           <div className={styles.hero_subline}>
-            I specialize in front-end engineering, SEO, and helping individuals
-            and businesses grow.
+            I specialize in front-end engineering, have a passion for teaching,
+            and aspire to learn everyday.
           </div>
           <a href="./Resume.pdf" target="_blank" className={styles.button}>
             View Resume
