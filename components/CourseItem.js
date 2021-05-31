@@ -37,7 +37,9 @@ export default function CourseItem({ course }) {
             {course.completed ? (
               <a className={styles.button}>Enroll</a>
             ) : (
-              <span>Unavaliable at this time </span>
+              <span className={styles.button_disable}>
+                Unavaliable at this time{" "}
+              </span>
             )}
 
             {user ? (
