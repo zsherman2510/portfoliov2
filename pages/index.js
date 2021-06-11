@@ -4,12 +4,15 @@ import Link from "next/link";
 import Projects from "@/components/Projects";
 import ProjectItem from "@/components/ProjectItem";
 import Courses from "@/components/Courses";
+import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
 import { API_URL } from "@/config/index";
 export default function HomePage({ projects, courses }) {
   return (
     <Layout>
       <Hero />
+      <h1>My Skills</h1>
+      <Skills />
       <Projects projects={projects} />
       <Courses courses={courses} />
       <Contact />

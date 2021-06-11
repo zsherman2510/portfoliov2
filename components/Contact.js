@@ -16,9 +16,9 @@ export default function Contact() {
             here.
           </a>
         </div>
-        <div className={styles.background_container}>
+        {/* <div className={styles.background_container}>
           <div className={styles.image}></div>
-        </div>
+        </div> */}
       </div>
     </>
   );

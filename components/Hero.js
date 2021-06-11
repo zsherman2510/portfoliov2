@@ -6,11 +6,11 @@ export default function Hero() {
       <div className={styles.hero}>
         <div className={styles.hero_text_container}>
           <div className={styles.hero_intro}>
-            I'm Zavion, software engineer and entrepreneurial educator.
+            I'm Zavion, full stack developer
           </div>
           <div className={styles.hero_subline}>
-            I specialize in front-end engineering, have a passion for teaching,
-            and aspire to learn everyday.
+            Crafting web applications from front to back - considering every
+            aspect. Specializing in bringing your visions to life.
           </div>
           <a href="./Resume.pdf" target="_blank" className={styles.button}>
             View Resume
