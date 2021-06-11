@@ -25,7 +25,7 @@
 .logo {
   color: #3C99DC;
   font-size: 20px;
-  
+
 }
 
 /* .logo a {
@@ -91,6 +91,11 @@
     width: 100%;
 
 
+
+  }
+
+  .header {
+    padding: 1.2rem 5%;
   }
 
   .hamburger {

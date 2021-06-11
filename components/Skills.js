@@ -53,12 +53,12 @@ export default function Skills() {
           </IconContext.Provider>
         </div>
         <div className={Styles.logo}>
-          <IconContext.Provider value={{ size: "2.5em", color: "black" }}>
+          <IconContext.Provider value={{ size: "2.5em", color: "ddd" }}>
             <SiNextDotJs />
           </IconContext.Provider>
         </div>
         <div className={Styles.logo}>
-          <IconContext.Provider value={{ size: "2.5em", color: "purple" }}>
+          <IconContext.Provider value={{ size: "2.5em", color: "#7c62aa" }}>
             <SiCsharp />
           </IconContext.Provider>
         </div>
