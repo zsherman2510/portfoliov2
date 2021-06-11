@@ -43,27 +43,27 @@ export default function Skills() {
           </IconContext.Provider>
         </div>
         <div className={Styles.logo}>
-          <IconContext.Provider value={{ size: "2.5em", color: "gold" }}>
+          <IconContext.Provider value={{ size: "1.8em", color: "gold" }}>
             <DiJavascript1 />
           </IconContext.Provider>
         </div>
         <div className={Styles.logo}>
-          <IconContext.Provider value={{ size: "2.5em", color: "#4fc3f7" }}>
+          <IconContext.Provider value={{ size: "1.8em", color: "#4fc3f7" }}>
             <FaReact />
           </IconContext.Provider>
         </div>
         <div className={Styles.logo}>
-          <IconContext.Provider value={{ size: "2.5em", color: "ddd" }}>
+          <IconContext.Provider value={{ size: "1.8em", color: "ddd" }}>
             <SiNextDotJs />
           </IconContext.Provider>
         </div>
         <div className={Styles.logo}>
-          <IconContext.Provider value={{ size: "2.5em", color: "#7c62aa" }}>
+          <IconContext.Provider value={{ size: "1.8em", color: "#7c62aa" }}>
             <SiCsharp />
           </IconContext.Provider>
         </div>
         <div className={Styles.logo}>
-          <IconContext.Provider value={{ size: "2.5em", color: "orange" }}>
+          <IconContext.Provider value={{ size: "1.8em", color: "orange" }}>
             <SiMysql />
           </IconContext.Provider>
         </div>

@@ -1,11 +1,12 @@
 .project {
     position: relative;
     background: rgb(3, 89, 181);
-    margin: 2rem 1rem 2rem 0;
+    /* margin: 2rem 1rem 2rem 0; */
+    margin: 2rem auto;
     padding: 1.1rem;
     border: 1px solid #031930;
     width: 100%;
-    max-width: 380px;
+
     border-radius: 12px;
     display: flex;
     flex-direction: column;
@@ -15,9 +16,15 @@
 
 }
 
-.img {
-    flex: 1;
+@media (min-width: 768px) {
+
+    .project {
+        max-width: 380px;
+    }
 }
+
+   
+
 
 .img img {
     width: 100%;
@@ -44,15 +51,13 @@
     flex-direction: row;
     margin: .6rem auto;
 
-
-
 }
 
 .project_tech {
     font-size: .8rem;
     margin-right: .9rem;
     background-color: #FFC300;
-    color:rgba(1, 1, 1);
+    color: rgba(1, 1, 1);
     padding: .3rem .5rem;
     border-radius: 8px;
 }

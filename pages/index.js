@@ -11,9 +11,10 @@ export default function HomePage({ projects, courses }) {
   return (
     <Layout>
       <Hero />
-      <h1>My Skills</h1>
+      <h1>My Skills..</h1>
       <Skills />
       <Projects projects={projects} />
+      <h1>Learn from me..</h1>
       <Courses courses={courses} />
       <Contact />
     </Layout>
