@@ -38,7 +38,7 @@ export default function Skills() {
       </div>
       <div className={Styles.logos}>
         <div className={Styles.logo}>
-          <IconContext.Provider value={{ size: "2.5em", color: "#4fc3f7" }}>
+          <IconContext.Provider value={{ size: "1.8em", color: "#4fc3f7" }}>
             <FaCss3 />
           </IconContext.Provider>
         </div>
