@@ -17,7 +17,9 @@ export default function Header() {
     <nav className={styles.header}>
       <div className={styles.logo}>
         <Link href="/">
-          <a>IAMZ</a>
+          <a>
+            <img src="/zavion4.png" alt="" />
+          </a>
         </Link>
       </div>
 

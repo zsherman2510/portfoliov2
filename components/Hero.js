@@ -12,7 +12,7 @@ export default function Hero() {
             Crafting web applications from front to back - considering every
             aspect. Specializing in bringing your visions to life.
           </div>
-          <a href="./Resume.pdf" target="_blank" className={styles.button}>
+          <a href="./Resume1.pdf" target="_blank" className={styles.button}>
             View Resume
           </a>
         </div>
