@@ -2,36 +2,26 @@
   position: relative;
   display: flex;
   text-align: center;
-  padding: 1rem 10%;
   justify-content: space-between;
   align-items: center;
   flex-flow: wrap;
   background: #00152e;
   color: rgb(255, 255, 255);
-
+  padding: 1.2rem 10%;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
 
 .header .menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
-
-
-
 }
 
 .logo {
-  color: #3C99DC;
-  font-size: 20px;
-
+  background-image: url('/images/zavion4.png');
 }
-
-/* .logo a {
-  color: #3C99DC;
-  margin: .4rem auto;
-} */
 
 .hamburger {
   display: none;
