@@ -35,10 +35,12 @@ export default function CourseItem({ course }) {
           <div className={styles.desc}>{course.description}</div>
           <div className={styles.wrapper}>
             {course.completed ? (
-              <a className={styles.button}>Enroll</a>
+              <a href={course.link} target="_blank" className={styles.button}>
+                Enroll
+              </a>
             ) : (
               <span className={styles.button_disable}>
-                Unavaliable at this time{" "}
+                Unavaliable at this time
               </span>
             )}
 
