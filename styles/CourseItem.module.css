@@ -109,7 +109,7 @@
 .button,
 .button_disable {
     border-radius: 8px;
-    padding: .5rem 1rem;
+    padding: 1rem 1.5rem;
     background: #001c3a;
     display: block;
     margin: 0 auto;
@@ -117,11 +117,12 @@
     border: none;
     font-weight: 600;
     cursor: pointer;
+    
 }
 
 .button_disable {
     border-radius: 8px;
-    padding: .5rem 1rem;
+    padding: .8rem;
     background: #788697;
     display: block;
     margin: 0 auto;
@@ -129,10 +130,11 @@
     border: none;
     font-size: .8rem;
     cursor: pointer;
+
 }
 
 
 .wrapper .button {
-    font-size: .7rem;
-    padding: .4rem .7rem;
+    font-size: 1rem;
+    padding: .7rem;
 }

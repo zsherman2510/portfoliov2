@@ -12,7 +12,11 @@ export default function Hero() {
             Crafting web applications from front to back - considering every
             aspect. Specializing in bringing your visions to life.
           </div>
-          <a href="./Resume1.pdf" target="_blank" className={styles.button}>
+          <a
+            href="https://drive.google.com/file/d/155TcLrBs78CRwIoDCQdRNrVjCiCwf8Ec/view?usp=sharing"
+            target="_blank"
+            className={styles.button}
+          >
             View Resume
           </a>
         </div>

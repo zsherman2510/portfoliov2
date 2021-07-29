@@ -45,7 +45,12 @@ export default function LoginPage() {
             />
           </div>
 
-          <input type="submit" value="Login" className="btn" />
+          <input
+            type="submit"
+            onClick={(e) => handleSubmit(e)}
+            value="Login"
+            className="btn"
+          />
         </form>
       </div>
     </Layout>
