@@ -22,7 +22,8 @@ export default function HomePage({ projects, courses }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`${API_URL}/projects`);
+  // const res = await fetch(`${API_URL}/projects`);
+  const res = await fetch(`${API_URL}/projects?_sort=releaseDate:desc`);
   const projects = await res.json();
 
   const courseRes = await fetch(`${API_URL}/courses`);
