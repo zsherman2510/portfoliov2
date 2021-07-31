@@ -5,8 +5,6 @@ import Link from "next/link";
 import AuthProvider from "@/context/AuthProvider";
 import { NEXT_URL } from "@/config/index";
 export default function ProjectItem({ project }) {
-  console.log(project);
-  console.log("here");
   const { user, error } = useContext(AuthProvider);
   const techSplits = project.tech.split("/");
 

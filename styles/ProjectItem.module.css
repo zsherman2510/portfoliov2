@@ -2,15 +2,15 @@
     position: relative;
     background: rgb(3, 89, 181);
     /* margin: 2rem 1rem 2rem 0; */
-    margin: 2rem auto;
+    margin: .3rem;
     padding: 1.1rem;
     border: 1px solid #031930;
     width: 100%;
-
+    display: inline-block;
     border-radius: 12px;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between; */
     box-shadow: 2px 2px 2px 1px rgba(1, 1, 36, 0.2);
     -webkit-box-shadow: 2px 2px 2px 1px rgb(1 1 36 / 20%);
 
@@ -19,7 +19,7 @@
 @media (min-width: 768px) {
 
     .project {
-        max-width: 380px;
+        max-width: 370px;
     }
 }
 

@@ -55,8 +55,8 @@ export default function AddProjects({ token }) {
       toast.error("Something went wrong");
     } else {
       const evt = await res.json();
-      toast.success("Event created successfully, Redirecting...");
-      router.push(`/project/${evt.slug}`);
+      toast.success("Project created successfully, Redirecting...");
+      router.push(`/projects/edit/${evt.id}`);
     }
   };
 

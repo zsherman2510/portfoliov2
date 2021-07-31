@@ -22,6 +22,6 @@ export default function Layout({ title, keywords, description, children }) {
 }
 
 Layout.defaultProps = {
-  title: "iamZavion",
+  title: "Zavion Sherman Software Developer Portfolio",
   description: "",
 };

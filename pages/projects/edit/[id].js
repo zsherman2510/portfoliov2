@@ -80,11 +80,11 @@ export default function EditProjectPage({ project, token, errorCode }) {
   };
 
   const imageUploaded = async (e) => {
-    const res = await fetch(`${API_URL}/events/${project.id}`);
+    const res = await fetch(`${API_URL}/projects/${project.id}`);
 
     const data = await res.json();
-
-    setImagePreview(data.image.formats.thumbnail.url);
+    console.log(data);
+    setImagePreview(data.thumbnail);
     setShowModal(false);
     //fetch event set data as the json response, setImagePreview with data.image.formats.thumbnial.url set show modal to false
   };
@@ -159,9 +159,11 @@ export default function EditProjectPage({ project, token, errorCode }) {
       </div>
       <Modal show={showModal} onClose={() => setShowModal(false)}>
         <ImageUpload
-          projectId={project.id}
+          id={project.id}
           imageUploaded={imageUploaded}
           token={token}
+          reference="projects"
+          field="projects"
         />
       </Modal>
     </Layout>
@@ -171,11 +173,11 @@ export async function getServerSideProps({ params: { id }, req }) {
   const { token } = parseCookies(req);
 
   const res = await fetch(`${API_URL}/projects/${id}`);
-  const errorCode = res.ok ? false : res.statusCode;
+
+  const errorCode = res.ok ? null : res.statusText;
 
   const project = await res.json();
 
-  console.log("Cookie" + req.headers.cookie);
   return {
     props: {
       errorCode,

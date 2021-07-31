@@ -13,6 +13,7 @@ export default function HomePage({ projects, courses }) {
       <Hero />
       <h1>My Skills..</h1>
       <Skills />
+      <h1>Some of my work..</h1>
       <Projects projects={projects} />
       <h1>Learn from me..</h1>
       <Courses courses={courses} />
