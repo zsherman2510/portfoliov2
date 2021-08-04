@@ -51,7 +51,7 @@ export default function Header() {
         </div> */}
         <div className={styles.menu_link}>
           <a target="_blank" href="mailto: shermanzavion@gmail.com">
-            Contact
+            Contact Me
           </a>
         </div>
         {user ? (
