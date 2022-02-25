@@ -7,17 +7,20 @@ import cookie from "cookie";
 export default async function (req, res) {
   if (req.method === "POST") {
     const { identifier, password } = req.body;
-    console.log(API_URL);
-    const strapiRes = await fetch(`${API_URL}/auth/local`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        identifier,
-        password,
-      }),
-    });
+    
+    const strapiRes = await fetch(
+		`https://glacial-falls-68810.herokuapp.com/auth/local`,
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				identifier,
+				password,
+			}),
+		}
+	);
 
     const data = await strapiRes.json();
     if (strapiRes.ok) {
