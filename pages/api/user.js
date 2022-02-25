@@ -13,12 +13,15 @@ export default async function (req, res) {
     
     const { token } = cookie.parse(req.headers.cookie);
 
-    const strapiRes = await fetch(`${API_URL}/users/me`, {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    const strapiRes = await fetch(
+		'https://glacial-falls-68810.herokuapp.com/users/me',
+		{
+			method: "GET",
+			headers: {
+				Authorization: `Bearer ${token}`,
+			},
+		}
+	);
 
     const user = await strapiRes.json();
 

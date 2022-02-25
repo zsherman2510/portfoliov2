@@ -9,7 +9,7 @@ export default async function (req, res) {
     const { identifier, password } = req.body;
     
     const strapiRes = await fetch(
-		`https://glacial-falls-68810.herokuapp.com/auth/local`,
+		'https://glacial-falls-68810.herokuapp.com/auth/local',
 		{
 			method: "POST",
 			headers: {
