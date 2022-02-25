@@ -26,6 +26,7 @@ export default function ProjectsPage({ projects }) {
 
 export async function getStaticProps() {
   // const res = await fetch(`${API_URL}/projects`);
+  console.log(API_URL);
   const res = await fetch(`${API_URL}/projects?_sort=releaseDate:desc`);
   const projects = await res.json();
 
