@@ -17,12 +17,14 @@ export default async function (req, res) {
 			},
 			body: JSON.stringify({
 				identifier,
-				password
+				passwords
 			}),
 		}
 	);
 
     const data = await strapiRes.json();
+    
+    
     if (strapiRes.ok) {
       res.setHeader(
         "Set-Cookie",
