@@ -10,7 +10,7 @@ export default async function (req, res) {
       res.status(403).json({ message: "not logged in" });
       return;
     }
-    //made just for a deployment
+    
     const { token } = cookie.parse(req.headers.cookie);
 
     const strapiRes = await fetch(`${API_URL}/users/me`, {
