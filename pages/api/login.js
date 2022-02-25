@@ -7,7 +7,7 @@ import cookie from "cookie";
 export default async function (req, res) {
   if (req.method === "POST") {
     const { identifier, password } = req.body;
-
+    console.log(API_URL);
     const strapiRes = await fetch(`${API_URL}/auth/local`, {
       method: "POST",
       headers: {
@@ -20,7 +20,6 @@ export default async function (req, res) {
     });
 
     const data = await strapiRes.json();
-    console.log(data.jwt);
     if (strapiRes.ok) {
       res.setHeader(
         "Set-Cookie",
