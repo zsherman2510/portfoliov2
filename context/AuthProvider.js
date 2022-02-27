@@ -36,7 +36,7 @@ export const AuthProvider = ({ children }) => {
   //   };
 
   // Login user
-  const login = async ({ email: identifier, password }) => {
+  const login = async ({ identifier, password }) => {
     const res = await fetch(`${API_URL}/api/login`, {
       method: "POST",
       headers: {
