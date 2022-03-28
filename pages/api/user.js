@@ -14,7 +14,8 @@ export default async function (req, res) {
     const { token } = cookie.parse(req.headers.cookie);
 
     const strapiRes = await fetch(
-		`${API_URL }/users/me`,
+		`${ API_URL }/users/me`,
+    // 'localhost:1337/users/me',
 		{
 			method: "GET",
 			headers: {

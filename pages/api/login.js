@@ -5,11 +5,13 @@ import cookie from "cookie";
 //export async function that passes in req and res
 //check if req.method === post
 export default async function (req, res) {
+  console.log('here login');
   if (req.method === "POST") {
     const { identifier, password } = req.body;
-    console.log( API_URL );
+    console.log("login");
     const strapiRes = await fetch(
 		`${ API_URL }/auth/local`,
+		//"localhost:1337/auth/local",
 		{
 			method: "POST",
 			headers: {
@@ -17,7 +19,7 @@ export default async function (req, res) {
 			},
 			body: JSON.stringify({
 				identifier,
-				passwords
+				password,
 			}),
 		}
 	);
@@ -44,6 +46,5 @@ export default async function (req, res) {
     }
   } else {
     res.setHeader("Allow", ["POST"]);
-    res.status(405).json({ message: `Method ${req.method}not allowed` });
   }
 }

@@ -10,9 +10,7 @@ export default function Header() {
 
   const showMenu = () => {
     isOpen ? setIsOpen(false) : setIsOpen(true);
-    console.log(isOpen);
   };
-  console.log(user);
   return (
     <nav className={styles.header}>
       <div className={styles.logo}>
