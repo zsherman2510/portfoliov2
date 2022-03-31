@@ -32,6 +32,12 @@
     height: 214px;
     object-fit: cover;
 }
+/* .project_desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+} */
 
 .project_title {
     font-size: 1.5rem;
