@@ -1,8 +1,8 @@
 .wrapper {
     position: relative;
     margin: 3rem auto;
-    /* display: flex;
-    flex-wrap: wrap; */
+    display: flex;
+    align-items: center;
 
 
 }
