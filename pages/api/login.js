@@ -18,8 +18,8 @@ export default async function (req, res) {
 				"Content-Type": "application/json",
 			},
 			body: JSON.stringify({
-				identifier,
-				password,
+				identifier: identifier,
+				password: password,
 			}),
 		}
 	);

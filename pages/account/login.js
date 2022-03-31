@@ -18,7 +18,7 @@ export default function LoginPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('UI login submit')
-    login({ email, password });
+    login({ email: email, password: password });
   };
 
   return (

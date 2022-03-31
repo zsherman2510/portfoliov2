@@ -15,72 +15,58 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => checkUserLoggedIn(), []);
 
   // Register user
-  //   const register = async (user) => {
-  //     const res = await fetch(`${NEXT_URL}/api/register`, {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(user),
-  //     });
+    const register = async ({ username, email, password }) => {
+      const res = await fetch(`${API_URL}/auth/local/register`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username: username,
+          email: email,
+          password: password
+        }),
+      });
 
-  //     const data = await res.json();
-  //     console.log(data);
+      const data = await res.json();
+      console.log(data);
 
-  //     if (res.ok) {
-  //       setUser(data.user);
-  //       router.push("/account/dashboard");
-  //     } else {
-  //       setError(data.message);
-  //       setError(null);
-  //     }
-  //   };
+      if (res.ok) {
+        setUser(data.user);
+        router.push("/account/dashboard");
+      } else {
+        setError(data.message);
+        setError(null);
+      }
+    };
 
-//   const login = async ({ identifier, password }) => {
-//     const res = await fetch(`${API_URL}/api/auth/local`, {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify({
-//         identifier,
-//         password,
-//       }),
-//     });
-//     const data = await res.json();
+  const login = async ({email, password} ) => {
+    console.log('secondary login');
+    console.log(email, password);
+    const res = await fetch(`${API_URL}/auth/local`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        identifier: email,
+        password: password,
+      }),
+    });
+    const data = await res.json();
 
-//     console.log(data);
+    console.log(data);
 
-//     if (res.ok) {
-//       setUser(data.user);
-//       setSuccess(data.message);
-//       console.log(user);
-//       router.push("/");
-//     } else {
-//       setError(data.message);
-//       setError(null);
-//     }
-// };
-
-const login = ( identifier, password ) => {
-  console.log('here login')
-  axios
-		.post(`${ API_URL }/auth/local`, {
-			identifier,
-			password,
-		})
-		.then((response) => {
-			// Handle success.
-			console.log("Well done!");
-			console.log("User profile", response.data.user);
-			console.log("User token", response.data.jwt);
-		})
-		.catch((error) => {
-			// Handle error.
-			console.log("An error occurred:", error.response);
-		});
-  
-}
+    if (res.ok) {
+      setUser(data.user);
+      setSuccess(data.message);
+      console.log(user);
+      router.push("/");
+    } else {
+      setError(data.message);
+      setError(null);
+    }
+};
 
   // Logout user
   const logout = async () => {
@@ -109,7 +95,7 @@ const login = ( identifier, password ) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, error, login, logout }}>
+    <AuthContext.Provider value={{ user, error, login, logout, register }}>
       {children}
     </AuthContext.Provider>
   );
