@@ -2,6 +2,7 @@
     position: relative;
     margin: 3rem auto;
     display: flex;
+    flex-flow: wrap;
     align-items: center;
 
 
