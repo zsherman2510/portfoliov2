@@ -1,10 +1,11 @@
 import styles from "@/styles/CourseItem.module.css";
 import projectStyles from "@/styles/ProjectItem.module.css";
 import { NEXT_URL } from "@/config/index";
-import AuthProvider from "@/context/AuthProvider";
+import {AuthContext} from "@/context/AuthProvider";
 import { useContext } from "react";
 export default function CourseItem({ course }) {
-  const { user, error } = useContext(AuthProvider);
+  const { user, error } = useContext(AuthContext);
+  
   const techSplits = course.technology.split("/");
 
   return (
@@ -44,7 +45,7 @@ export default function CourseItem({ course }) {
               </span>
             )}
 
-            {user ? (
+            {user.auth ? (
               <a
                 className={styles.button}
                 href={`${NEXT_URL}/courses/edit/${course.id}`}

@@ -36,12 +36,14 @@ export default function ImageUpload({
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log('image upload');
     const formData = new FormData();
     formData.append("files", image);
     formData.append("ref", reference);
     formData.append("refId", id);
     formData.append("field", field);
-
+    console.log(...formData);
+    console.log('making request');
     const res = await fetch(`${API_URL}/upload`, {
       method: "POST",
       headers: {
@@ -53,6 +55,7 @@ export default function ImageUpload({
         console.log(progress);
 
         if (toastId.current === null) {
+          console.log('upload in progress');
           toastId.current = toast("Upload in progress", {
             progress: progress,
           });

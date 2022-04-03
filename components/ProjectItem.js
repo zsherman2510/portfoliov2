@@ -2,10 +2,10 @@ import Image from "next/image";
 import styles from "@/styles/ProjectItem.module.css";
 import { useContext } from "react";
 import Link from "next/link";
-import AuthProvider from "@/context/AuthProvider";
+import { AuthContext } from "@/context/AuthProvider";
 import { NEXT_URL } from "@/config/index";
 export default function ProjectItem({ project }) {
-  const { user, error } = useContext(AuthProvider);
+  const { user, error } = useContext(AuthContext);
   const techSplits = project.tech.split("/");
 
   return (
@@ -50,7 +50,7 @@ export default function ProjectItem({ project }) {
           >
             View live demo
           </a>
-          {user ? (
+          {user.auth ? (
             <>
               <a
                 className={styles.project_link}

@@ -3,10 +3,10 @@ import { useRouter } from "next/router";
 import { API_URL } from "@/config/index";
 import axios from 'axios';
 
-const AuthContext = createContext();
+export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({ user: null, jwt: '', auth: false});
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
 
@@ -58,46 +58,53 @@ export const AuthProvider = ({ children }) => {
     console.log(data);
 
     if (res.ok) {
-      setUser(data.user);
-      setSuccess(data.message);
-      console.log(user);
+      localStorage.setItem('token', data.jwt);
+      // setUser((data) => ({
+      //   user: data.user,
+      //   jwt: data.jwt,
+      //   auth: true
+      // }));
+      setUser({ user: data, jwt: data.jwt, auth: true });
+      setSuccess('logged in successfully');
+      console.log(user, 'logged in');
       router.push("/");
     } else {
-      setError(data.message);
+      setError('error logging in');
       setError(null);
     }
 };
 
   // Logout user
   const logout = async () => {
-    const res = await fetch(`${API_URL}/auth/local`, {
-		method: "POST",
-	});
-    const data = await res.json();
+    localStorage.removeItem("token");
+		setUser({ user: null, jwt: "", auth: false });
 
-    if (res.ok) {
-      setUser(null);
-
-      router.push("/");
-    }
+		router.push("/");
   };
 
   // Check if user is logged in
   const checkUserLoggedIn = async (user) => {
-    const res = await fetch(`${API_URL}/api/user`);
+    const token = localStorage.getItem('token');
+    const res = await fetch(`${API_URL}/users/me`, {
+		method: "GET",
+		headers: {
+			Authorization: `Bearer ${token}`,
+		},
+	});
     const data = await res.json();
-    console.log(data + "data");
+    console.log(data);
     if (res.ok) {
-      setUser(data.user);
+      console.log('checking if user is logged in');
+      setUser({ user: data, jwt: token, auth: true });
     } else {
-      setUser(null);
+      setUser({ user: {}, jwt: '', auth: false});
     }
   };
 
   return (
-    <AuthContext.Provider value={{ user, error, login, logout, register }}>
+    <AuthContext.Provider value={{ login, logout, register, user, error }} >
       {children}
     </AuthContext.Provider>
   );
 };
-export default AuthContext;
+

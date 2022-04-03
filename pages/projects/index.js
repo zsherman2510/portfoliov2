@@ -3,10 +3,11 @@ import { useContext, useState } from "react";
 import { Link } from "next/link";
 import { API_URL, NEXT_URL } from "@/config/index";
 import Layout from "@/components/Layout";
-import AuthProvider from "@/context/AuthProvider";
+import { AuthContext } from "@/context/AuthProvider";
 import styles from "@/styles/Projects.module.css";
+
 export default function ProjectsPage({ projects }) {
-  const { user, error } = useContext(AuthProvider);
+  const { user, error } = useContext(AuthContext);
   return (
     <Layout>
       <h1>My Projects</h1>

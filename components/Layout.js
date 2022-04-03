@@ -3,21 +3,24 @@ import { useRouter } from "next/router";
 import Header from "./Header";
 import Footer from "./Footer";
 import styles from "../styles/Layout.module.css";
-
+import { useContext, useState } from "react";
+import AuthProvider from "@/context/AuthProvider";
 export default function Layout({ title, keywords, description, children }) {
-  const router = useRouter();
-  return (
-    <div>
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <meta name="keyword" content={keywords} />
-      </Head>
-      <Header />
 
-      <div className={styles.container}>{children}</div>
-      <Footer />
-    </div>
+  return (
+		<div>
+			<Head>
+				<title>{title}</title>
+				<meta name="description" content={description} />
+				<meta name="keyword" content={keywords} />
+			</Head>
+			
+				<Header />
+
+				<div className={styles.container}>{children}</div>
+				<Footer />
+			
+		</div>
   );
 }
 

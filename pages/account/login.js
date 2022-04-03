@@ -4,7 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useState, useEffect, useContext } from "react";
 import Link from "next/link";
 import Layout from "@/components/Layout";
-import AuthContext from "@/context/AuthProvider";
+import {AuthContext} from "@/context/AuthProvider";
 import styles from "@/styles/AuthForm.module.css";
 
 export default function LoginPage() {

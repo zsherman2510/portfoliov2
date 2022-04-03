@@ -1,15 +1,19 @@
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useRouter } from "next/router";
 import Layout from "@/components/Layout";
 import { API_URL } from "@/config/index";
 import { parseCookies } from "@/helpers/index";
 import Link from "next/link";
+import { AuthContext } from "@/context/AuthProvider";
 
 import styles from "@/styles/Form.module.css";
 
-export default function AddProjects({ token }) {
+export default function AddProjects() {
+  
+  const { user } = useContext(AuthContext);
+  
   const [values, setValues] = useState({
     name: "",
     description: "",
@@ -39,7 +43,7 @@ export default function AddProjects({ token }) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${user.jwt}`,
       },
       body: JSON.stringify(values),
     });
@@ -61,66 +65,62 @@ export default function AddProjects({ token }) {
   };
 
   return (
-    <Layout title="Add Project">
-      <Link href="/">Go Back</Link>
-      <h1>Add Project</h1>
-      <ToastContainer />
-      <form onSubmit={handleSubmit} className={styles.form}>
-        <div className={styles.grid}>
-          <div>
-            <label htmlFor="Name">Project Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={values.name}
-              onChange={handleInputChange}
-            />
-          </div>
-          <div>
-            <label htmlFor="Name">Description</label>
-            <input
-              type="text"
-              id="description"
-              name="description"
-              value={values.description}
-              onChange={handleInputChange}
-            />
-          </div>
+		<Layout title="Add Project">
+			<Link href="/">Go Back</Link>
+			<h1>Add Project</h1>
+			<ToastContainer />
+			<form onSubmit={handleSubmit} className={styles.form}>
+				<div className={styles.grid}>
+					<div>
+						<label htmlFor="Name">Project Name</label>
+						<input
+							type="text"
+							id="name"
+							name="name"
+							placeholder="Enter Project Name"
+							value={values.name}
+							onChange={handleInputChange}
+						/>
+					</div>
+					<div>
+						<label htmlFor="Name">Description</label>
+						<input
+							type="text"
+							id="description"
+							name="description"
+							placeholder="Enter Project Description"
+							value={values.description}
+							onChange={handleInputChange}
+						/>
+					</div>
 
-          <div>
-            <label htmlFor="Name">Tech</label>
-            <input
-              type="text"
-              id="tech"
-              name="tech"
-              value={values.tech}
-              onChange={handleInputChange}
-            />
-          </div>
-          <div>
-            <label htmlFor="Name">Link</label>
-            <input
-              type="text"
-              id="link"
-              name="link"
-              value={values.link}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <input type="submit" value="Add Event" className="btn" />
-      </form>
-    </Layout>
+					<div>
+						<label htmlFor="Name">Tech</label>
+						<input
+							type="text"
+							id="tech"
+							name="tech"
+							placeholder="Enter Project Tech"
+							value={values.tech}
+							onChange={handleInputChange}
+						/>
+					</div>
+					<div>
+						<label htmlFor="Name">Link</label>
+						<input
+							type="text"
+							id="link"
+							name="link"
+							placeholder="Enter Project Link"
+							value={values.link}
+							onChange={handleInputChange}
+						/>
+					</div>
+				</div>
+				<input type="submit" value="Add Event" className="btn" />
+			</form>
+		</Layout>
   );
 }
 
-export async function getServerSideProps({ req }) {
-  const { token } = parseCookies(req);
-  console.log(token);
-  return {
-    props: {
-      token,
-    },
-  };
-}
+

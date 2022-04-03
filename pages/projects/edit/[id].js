@@ -1,5 +1,5 @@
-import { parseCookies } from "@/helpers/index";
-import { FaImage } from "react-icons/fa";
+
+import { FaCommentsDollar, FaImage } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
@@ -10,7 +10,7 @@ import Image from "next/image";
 import Layout from "@/components/Layout";
 import Modal from "@/components/Modal";
 import ImageUpload from "@/components/ImageUpload";
-import AuthProvider from "@/context/AuthProvider";
+import { AuthContext } from "@/context/AuthProvider";
 import { API_URL } from "@/config/index";
 import styles from "@/styles/Form.module.css";
 import Error from "next/error";
@@ -21,7 +21,11 @@ export default function EditProjectPage({ project, token, errorCode }) {
   if (errorCode) {
     return <Error statusCode={errorCode} />;
   }
-  const { user } = useContext(AuthProvider);
+  const { user } = useContext(AuthContext);
+  
+  token = user.jwt;
+  
+  console.log(user);
 
   const [values, setValues] = useState({
     name: project.name,
@@ -54,8 +58,8 @@ export default function EditProjectPage({ project, token, errorCode }) {
       toast.error("Please fill in all fields");
     }
 
-    const res = await fetch(`${API_URL}/projects`, {
-      method: "POST",
+    const res = await fetch(`${API_URL}/projects/${project.id}`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
@@ -75,22 +79,21 @@ export default function EditProjectPage({ project, token, errorCode }) {
     } else {
       const project = await res.json();
       toast.success("Project created successfully, Redirecting...");
-      router.push(`/project/${project.slug}`);
+      router.push('/');
     }
   };
 
   const imageUploaded = async (e) => {
     const res = await fetch(`${API_URL}/projects/${project.id}`);
-
     const data = await res.json();
     console.log(data);
-    setImagePreview(data.thumbnail);
+    setImagePreview(data.thumbnail.formats.thumbnail.url);
     setShowModal(false);
-    //fetch event set data as the json response, setImagePreview with data.image.formats.thumbnial.url set show modal to false
+    
   };
 
   return (
-    <Layout title="Add Project">
+    <Layout title="Edit Project">
       <Link href="/">Go Back</Link>
       <h1>Edit Project</h1>
       <ToastContainer />
@@ -138,7 +141,7 @@ export default function EditProjectPage({ project, token, errorCode }) {
             />
           </div>
         </div>
-        <input type="submit" value="Add Event" className="btn" />
+        <input type="submit" value="Add Project" className="btn" />
       </form>
       <h2>Event Image</h2>
       {imagePreview ? (
@@ -163,15 +166,15 @@ export default function EditProjectPage({ project, token, errorCode }) {
           imageUploaded={imageUploaded}
           token={token}
           reference="projects"
-          field="projects"
+          field="thumbnail"
         />
       </Modal>
     </Layout>
   );
 }
 export async function getServerSideProps({ params: { id }, req }) {
-  const { token } = parseCookies(req);
-
+  
+ 
   const res = await fetch(`${API_URL}/projects/${id}`);
 
   const errorCode = res.ok ? null : res.statusText;
@@ -182,7 +185,7 @@ export async function getServerSideProps({ params: { id }, req }) {
     props: {
       errorCode,
       project,
-      token,
+      
     },
   };
 }
