@@ -7,12 +7,12 @@ import { AuthContext } from "@/context/AuthProvider";
 import styles from "@/styles/Projects.module.css";
 
 export default function ProjectsPage({ projects }) {
-  const { user, error } = useContext(AuthContext);
+  
   return (
     <Layout>
       <h1>My Projects</h1>
       <Projects projects={projects} />
-      {user ? (
+      {/* {user ? (
         <Link>
           <a className={styles.button__add} href={`${NEXT_URL}/projects/add`}>
             Add Project
@@ -20,7 +20,7 @@ export default function ProjectsPage({ projects }) {
         </Link>
       ) : (
         <span></span>
-      )}
+      )} */}
     </Layout>
   );
 }
